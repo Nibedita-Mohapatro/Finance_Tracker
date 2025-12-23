@@ -17,7 +17,8 @@
         <br> <br><br><br><br><br>
 
         <div class="container mt-4   bg-white mx-auto col-md-3 card shadow p-3">
-            <div class="login-form">
+            <div class="login-form"> {% csrf_token %}
+
                 {% if messages %}
                 {% for message in messages %}
                 <div class="alert alert-success {{ message.tags }}" role="alert">
