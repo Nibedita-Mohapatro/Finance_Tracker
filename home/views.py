@@ -99,8 +99,9 @@ def register_page(request):
             messages.success(request, "Account created")
             return redirect('/login')
         except Exception as e:
-            messages.error(request, "Something went wrong")
-            return redirect('/register')
+            print("REGISTER ERROR 👉", e)
+            messages.error(request, str(e))
+            return redirect("register")
     return render(request, "register.html")
 
 # Logout function
